@@ -1,4 +1,4 @@
-/* let Nombre =  'Ezequiel Mantilla Restrepo'
+let Nombre =  'Ezequiel Mantilla Restrepo'
 let Ahorros = 900000
 let Deudas = 100000
 let Dinero = Ahorros-Deudas
@@ -63,7 +63,7 @@ function game() {
     return console.log('Eres un crack')
 }
 
-game() */
+game()
 
 fruticas = ['Fresa', 'Mango', 'Banano']
 
