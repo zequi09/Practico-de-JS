@@ -6,8 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Figuras</title>
 </head>
-<body>
 <script src="./figuras.js"></script>
-    <h1>Figuras Geométricas</h1>   
+<body>
+    <header>
+        <h1>Figuras Geométricas</h1>
+        <p>Pirmer taller del curso práctico de JavaScrips</p>
+        <section>
+            <h3>Calcula el área y perímetro de un cuadrado</h3>
+            <form action="">
+                <label for="InputCuadrado">
+                    Escribe cúanto mide cada lado de tu cuadrado:
+                </label>
+                <input id="InputCuadrado" type="number">
+                <button type="button" onclick="calcularPerimetroCuadrado()">
+                    Calcular el perímetro
+                </button>
+                <button type="button" onclick="calcularAreaCuadrado()">
+                    Calcular el área
+                </button>
+            </form>
+            <div id="resultadoCuadrado"></div>
+        </section>
+    </header>
+       
 </body>
 </html>

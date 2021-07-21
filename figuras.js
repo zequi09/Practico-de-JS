@@ -3,36 +3,57 @@ console.group("Cuadrados")
 const ladoCuadrado = 5
 console.log("El perímetro del cuadrado: "+ ladoCuadrado +"cm")
 
-const perimetroCuadrado = ladoCuadrado * 4
+function perimetroCuadrado(lado) {
+    return lado * 4
+} 
 
-console.log("El perimetro del cuadrado es: "+ perimetroCuadrado +"cm")
+console.log(perimetroCuadrado(5))
 
-const areaCuadrado = ladoCuadrado * ladoCuadrado
+/* console.log("El perimetro del cuadrado es: "+ perimetroCuadrado +"cm")
+ */
 
-console.log("El área del cuadrado es: "+ areaCuadrado +"cm^2")
+function areaCuadrado(lado) {
+    return lado*lado
+} 
+console.log(areaCuadrado(5))
 
+/* console.log("El área del cuadrado es: "+ areaCuadrado +"cm^2")
+ */
 console.groupEnd()
 
 
 //Código triangulo
 console.group("Triangulos")
 
-const ladoTriangulo1 = 6
+/* const ladoTriangulo1 = 6
 const ladoTriangulo2 = 6
-const baseTriangulo = 4
+const baseTriangulo = 4 */
 
-console.log("Los lados del triángilo miden: "+ ladoTriangulo1 +"cm, "+ ladoTriangulo2 +"cm, "+ baseTriangulo +"cm")
+function perimetroTriangulo(lado1,lado2,base) {
+    return lado1 + lado2 + base
+}
 
-const perimetroTriangulo = ladoTriangulo1 + ladoTriangulo2 + baseTriangulo
+console.log(perimetroTriangulo(6,6,4))
 
-console.log("El perímetro del triangulo es: "+ perimetroTriangulo +"cm")
+/* const perimetroTriangulo = ladoTriangulo1 + ladoTriangulo2 + baseTriangulo
+ */
+/* console.log("El perímetro del triangulo es: "+ perimetroTriangulo +"cm")
+ */
+ function alturaTriangulo(lado,base) {
+     return Math.sqrt((lado*lado)-(base/2)*(base/2))
+ }
 
-const alturaTriangulo = Math.sqrt((ladoTriangulo1 * ladoTriangulo1) - (baseTriangulo/2)*(baseTriangulo/2))
+ console.log(alturaTriangulo(6,4))
 
-const areaTriangulo = (baseTriangulo * alturaTriangulo)/2 
+/* const alturaTriangulo = Math.sqrt((ladoTriangulo1 * ladoTriangulo1) - (baseTriangulo/2)*(baseTriangulo/2))
+ */
+function areaTriangulo(base,altura) {
+    return (base*altura)/2
+} 
+console.log(areaTriangulo(4,alturaTriangulo(6,4)))  
 
-console.log("El área del triángulo es: "+ areaTriangulo +"cm^2")
-console.log(alturaTriangulo)
+/* console.log("El área del triángulo es: "+ areaTriangulo +"cm^2")
+console.log(alturaTriangulo) */
 console.groupEnd()
 
 //Circulo
@@ -40,15 +61,49 @@ console.groupEnd()
 console.group("Circulos")
 
 const radioCirculo = 4
-const diametroCirculo = radioCirculo *2
+
+function diametroCirculo(radio) {
+    return radio*2
+} 
+
 const PI = Math.PI
-const perimetroCirculo = PI * diametroCirculo
-const areaCirculo = PI*(radioCirculo*radioCirculo)
+
+function perimetroCirculo(radio) {
+    const diametro = diametroCirculo(radio)
+    return PI*diametro
+} 
+
+function areaCirculo(radio) {
+    return PI*(radio*radio)
+} 
 
 console.log("El radio de círculo es: "+radioCirculo +"cm")
-console.log("El diametro del círculo es: "+diametroCirculo +"cm")
-console.log("El perímetro del círculo es: "+perimetroCirculo +"cm")
-console.log("El área de círculo es: "+areaCirculo +"cm^2")
+console.log(diametroCirculo(radioCirculo))
+console.log(perimetroCirculo(8))
+console.log(areaCirculo(4))
+
+
+/* console.log("El perímetro del círculo es: "+perimetroCirculo +"cm")
+console.log("El área de círculo es: "+areaCirculo +"cm^2") */
 
 console.groupEnd()
+
+
+//Interacuar con el HTML
+
+function calcularPerimetroCuadrado() {
+    const input = document.getElementById("InputCuadrado")
+    const value = input.value
+    
+    const perimetro = perimetroCuadrado(value)
+    document.getElementById('resultadoCuadrado').innerHTML = perimetro
+}
+
+function calcularAreaCuadrado() {
+    const input = document.getElementById("InputCuadrado")
+    const value = input.value
+    
+    const area = areaCuadrado(value)
+    document.getElementById('resultadoCuadrado').innerHTML = area
+}
 
