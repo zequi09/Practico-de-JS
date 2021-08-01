@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;   
+}
+
+html{
+    font-size: 62.5%;
+    font-family:"DM Sans","sans-serif";
+    scroll-behavior: smooth;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+}
+
+.big-section-figuras{
+    display: flex;
+    width: auto;
+    height: 200px;
+}
+
+.section-cuadrado .section-triangulo .section-circulo{
+    
+}
+
