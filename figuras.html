@@ -61,6 +61,20 @@
     </section>
     
     <h1>Descuentos</h1>
+    <section class="section-descuento">
+        <h3>Calcula el precio a pagar de tus productos con descuento</h3>
+        <form action="">
+            <label for="Input_Precio">Escribe cúanto vale tu producto: </label>
+            <input id="Input_Precio" type="number" placeholder="Precio...">
+            <div>
+            <label for="Input_Descuento">Escribe cúanto es el descuento: </label>
+            <input id="Input_Descuento" type="number" placeholder="Descuento...">
+            <div>
+            <button type="button" onclick="calcularPrecio()">Calcular el precio con descuento</button>
+            </div>
+        </form>
+        <div id="Resultado_Precio_descuento"></div>
+    </section>
     <script src="./figuras.js"></script>
        
 </body>

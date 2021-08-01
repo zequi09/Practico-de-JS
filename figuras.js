@@ -19,6 +19,12 @@ const input_circulo = document.querySelector("#Input_Circulo")
 const Resultado_Circulo_Area = document.querySelector("#Resultado_area_circulo")
 const Resultado_Circulo_Perimetro = document.querySelector("#Resultado_perimetro_circulo") 
 
+//Datos para el precio y descuento
+const input_precio = document.querySelector("#Input_Precio")
+const input_descuento = document.querySelector("#Input_Descuento")
+const Resultado_Precio_Descuento = document.querySelector("#Resultado_Precio_descuento")
+
+
 
 const perimetroCuadrado = lado => lado *4
 const areaCuadrado = lado => lado*lado
@@ -70,6 +76,15 @@ function calcularAreaCirculo() {
    let resultado = areacirculo(valueC)
    Resultado_Circulo_Area.innerHTML = `Área ${resultado}cm^2`
 } 
+
+const preciodescuento = (precio,descuento) => (precio*(100-descuento))/100
+
+function calcularPrecio() {
+    let valueP = input_precio.value
+    let valueD = input_descuento.value
+    let resultado = preciodescuento(valueP,valueD)
+    Resultado_Precio_Descuento.innerHTML = `El precio con descuento es: ${resultado}$`
+}
 
 
 
