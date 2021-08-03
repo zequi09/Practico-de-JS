@@ -83,8 +83,80 @@ function calcularPrecio() {
     let valueP = input_precio.value
     let valueD = input_descuento.value
     let resultado = preciodescuento(valueP,valueD)
-    Resultado_Precio_Descuento.innerHTML = `El precio con descuento es: ${resultado}$`
+    Resultado_Precio_Descuento.innerHTML = `El precio con descuento es: ${resultado}$`}
+
+
+
+function calcularmedia(lista) {
+    const sumalista = lista.reduce(
+        function (valorAcumulado = 0, elemento) {
+            return valorAcumulado + elemento
+        }
+    )
+    const promediolista = sumalista / lista.length
+    return promediolista
 }
+
+let lista1 = [
+    100,500,800,1000,5,310
+]
+
+lista1.sort(function (a,b) {    
+    return a-b
+})
+
+
+
+const mitadlista1 = parseInt(lista1.length /2)
+
+function esPar(numero) {
+    if (numero % 2 === 0) {
+        return true
+    }else {
+        return false
+    }
+}
+
+let mediana
+
+if (esPar(lista1.length)) {
+    const elemento1 = lista1[mitadlista1 -1 ] 
+    const elemento2 = lista1[mitadlista1]
+
+    const promedio1y2 = calcularmedia([elemento1,elemento2])
+
+    mediana = promedio1y2
+}else {
+    mediana =lista1[mitadlista1]
+}
+
+let lista2 = [
+    1,1,2,3,3,3,3,3,2,2,2,2,1,1,1,1,1,1,1,1
+]
+
+const lista2Count = {}
+
+lista2.map(
+    function (elemento) {
+        if (lista2Count[elemento]) {
+            lista2Count[elemento] +=1
+        } else{
+            lista2Count[elemento] = 1
+        } 
+    }
+)
+
+const lista2Array = Object.entries(lista2Count).sort(
+    function (a,b) {        
+        return a[1]-b[1] 
+    }
+)
+
+const moda = lista2Array[lista2Array.length - 1]
+
+
+    
+
 
 
 
